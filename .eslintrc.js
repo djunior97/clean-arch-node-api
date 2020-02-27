@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'prettier'
   ],
   globals: {
     Atomics: 'readonly',
@@ -18,7 +19,9 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
+    'prettier'
   ],
   rules: {
+    "no-unused-vars": ["error", {"argsIgnorePattern": "next"}],
   },
 };
