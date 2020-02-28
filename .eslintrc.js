@@ -74,6 +74,7 @@ module.exports = {
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
     "jest/no-undef": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off"
   },
   env: {
     "jest": true
