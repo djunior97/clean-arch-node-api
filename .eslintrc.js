@@ -20,8 +20,48 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'prettier',
-    'jest'
+    'jest',
+    'import'
   ],
+  settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      // use <root>/tsconfig.json
+      "typescript": {
+        "alwaysTryTypes": true // always try to resolve types under `<roo/>@types` directory even it doesn't contain any source code, like `@types/unist`
+      },
+ 
+      // use <root>/path/to/folder/tsconfig.json
+      "typescript": {
+        "directory": "./path/to/folder"
+      },
+ 
+      // Multiple tsconfigs (Useful for monorepos)
+ 
+      // use a glob pattern
+      "typescript": {
+        "directory": "./packages/*/tsconfig.json"
+      },
+ 
+      // use an array
+      "typescript": {
+        "directory": [
+          "./packages/module-a/tsconfig.json",
+          "./packages/module-b/tsconfig.json"
+        ]
+      },
+ 
+      // use an array of glob patterns
+      "typescript": {
+        "directory": [
+          "./packages/*/tsconfig.json",
+          "./other-packages/*/tsconfig.json"
+        ]
+      }
+    }
+  }
   rules: {
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
@@ -33,9 +73,10 @@ module.exports = {
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
-    "jest/no-undef": "off"
+    "jest/no-undef": "off",
+    "import/no-unresolved": "error"
   },
   env: {
     "jest": true
-  }
+  },
 };
