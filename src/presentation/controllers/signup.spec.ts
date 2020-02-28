@@ -1,6 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-
 import SignUpController from './signup';
 import MissingParamError from '../errors/missing-param-errors';
 

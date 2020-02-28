@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable no-unused-vars */
 import { HttpRequest, HttpResponse } from '../protocols/http';
 import MissingParamError from '../errors/missing-param-errors';
 import badRequest from '../helpers/http-helper';
@@ -12,6 +10,13 @@ class SignUpController {
 
     if (!httpRequest.body.email) {
       return badRequest(new MissingParamError('email'));
+    }
+    const requiredFields = ['name', 'email'];
+
+    for (const field of requiredFields) {
+      if (!httpRequest.body[field]) {
+        return badRequest(new MissingParamError(field));
+      }
     }
 
     return {
