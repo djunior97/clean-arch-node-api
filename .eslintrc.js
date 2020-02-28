@@ -42,22 +42,22 @@ module.exports = {
  
       // use a glob pattern
       "typescript": {
-        "directory": "./packages/*/tsconfig.json"
+        "directory": "./*/tsconfig.json"
       },
  
       // use an array
       "typescript": {
         "directory": [
-          "./packages/module-a/tsconfig.json",
-          "./packages/module-b/tsconfig.json"
+          "./module-a/tsconfig.json",
+          "./module-b/tsconfig.json"
         ]
       },
  
       // use an array of glob patterns
       "typescript": {
         "directory": [
-          "./packages/*/tsconfig.json",
-          "./other-packages/*/tsconfig.json"
+          "./*/tsconfig.json",
+          "./*/tsconfig.json"
         ]
       }
     }
@@ -74,7 +74,6 @@ module.exports = {
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
     "jest/no-undef": "off",
-    "import/no-unresolved": "error"
   },
   env: {
     "jest": true
