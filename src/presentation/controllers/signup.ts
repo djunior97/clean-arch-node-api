@@ -1,6 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
+import { HttpRequest, HttpResponse } from '../protocols/http';
+
 class SignUpController {
-  handle(httpRequest: any): any {
+  handle(httpRequest: HttpRequest): HttpResponse {
     if (!httpRequest.body.name) {
       return {
         statusCode: 400,
@@ -15,7 +18,10 @@ class SignUpController {
       };
     }
 
-    return {};
+    return {
+      statusCode: 200,
+      body: 'ok',
+    };
   }
 }
 
