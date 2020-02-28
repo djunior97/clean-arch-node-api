@@ -67,7 +67,7 @@ module.exports = {
     "class-methods-use-this": "off",
     "no-param-reassign": "off",
     "camelcase": "off",
-    "no-unused-vars": ["error", {"argsIgnorePattern": "next"}],
+    "no-unused-vars": ["warn", {"argsIgnorePattern": "next"}],
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
